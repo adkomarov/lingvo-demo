@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта с регионами</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: row;
+            font-family: Arial, sans-serif;
+        }
+        #map-container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            border: 1px solid black;
+            margin-right: 20px;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        .icon {
+            position: absolute;
+            width: 20px; /* Уменьшили размер иконок */
+            height: 20px; /* Уменьшили размер иконок */
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+        .icon img {
+            width: 100%;
+            height: 100%;
+        }
+        #side-panel {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+        #details {
+            margin-top: 20px;
+        }
+        .selected {
+            background-color: yellow; /* Подсветка выбранного элемента */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map-container">
+        <img id="map" src="map.jpg" alt="Map">
+    </div>
+
+    <div id="side-panel">
+        <div id="words-container">
+            <h3>Список слов</h3>
+            <table id="word-table"></table>
+        </div>
+        <div id="regions-container">
+            <h3>Регионы</h3>
+            <table id="region-table"></table>
+        </div>
+        <div id="details">
+            <h3>Детали региона</h3>
+            <label>GPS Координаты:</label>
+            <input type="text" id="gps-coordinates">
+            <button id="save-gps">Сохранить GPS</button>
+            
+            <h4>Комментарии</h4>
+            <div id="comments"></div>
+            
+            <form id="comment-form">
+                <input type="text" id="new-comment" placeholder="Добавить комментарий">
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
